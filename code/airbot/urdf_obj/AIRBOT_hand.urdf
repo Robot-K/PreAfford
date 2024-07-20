@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="AIRBOT_hand">
+  <mujoco>
+    <compiler meshdir="../all/" balanceinertia="true" discardvisual="false" />
+  </mujoco>
+
+  <link name="root">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
+    </inertial>
+  </link>
+  <link name="root1">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
+    </inertial>
+  </link>
+  <link name="root2">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
+    </inertial>
+  </link>
+  <link name="root3">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
+    </inertial>
+  </link>
+  <link name="root4">
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1e-4" ixy="0.0" ixz="0.0" iyy="1e-4" iyz="0.0" izz="1e-4"/>
+    </inertial>
+  </link>
+  <link name="root5">
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.05" ixy="0.0" ixz="0.0" iyy="0.05" iyz="0.0" izz="0.05"/>
+    </inertial>
+  </link>
+  <joint name="x_joint" type="prismatic">
+    <parent link="root"/>
+    <child link="root1"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-10" upper="10"/>
+  </joint>
+  <joint name="y_joint" type="prismatic">
+    <parent link="root1"/>
+    <child link="root2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-10" upper="10"/>
+  </joint>
+  <joint name="z_joint" type="prismatic">
+    <parent link="root2"/>
+    <child link="root3"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-10" upper="10"/>
+  </joint>
+  <joint name="x_rotation_joint" type="continuous">
+    <parent link="root3"/>
+    <child link="root4"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+  <joint name="y_rotation_joint" type="continuous">
+    <parent link="root4"/>
+    <child link="root5"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+  <joint name="z_rotation_joint" type="continuous">
+    <parent link="root5"/>
+    <child link="gripper_link"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link
+    name="gripper_link">
+    <inertial>
+      <origin
+        xyz="-0.000179 -0.012920 0.115245"
+        rpy="0 0 0" />
+      <mass
+        value="0.202483822224683" />
+      <inertia
+        ixx="8.72656224038094E-05"
+        ixy="2.1157802312087E-09"
+        ixz="4.46212258304102E-07"
+        iyy="0.000110884338373626"
+        iyz="3.53923491606382E-06"
+        izz="9.50216775187288E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 -0.003"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link.obj" />
+      </geometry>
+      <material
+        name="phong1SG">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 -0.003"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="gripper_link10">
+    <inertial>
+      <origin
+        xyz="0.0162376775855017 0.00170828143838967 1.60704782814491E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.0248574193257273" />
+      <inertia
+        ixx="1.1187321281772E-07"
+        ixy="-6.68088965340704E-19"
+        ixz="-1.14085928959275E-18"
+        iyy="6.84359115875508E-07"
+        iyz="-3.99246934174549E-19"
+        izz="5.89072994948579E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link10.obj" />
+      </geometry>
+      <material
+        name="lambert2SG">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link10.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_gripper10"
+    type="prismatic">
+    <origin
+      xyz="-0.03 0.00036 0.18735"
+      rpy="-1.5708 -1.304 3.1416" />
+    <parent
+      link="gripper_link" />
+    <child
+      link="gripper_link10" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-10"
+      upper="10"
+      effort="20"
+      velocity="0.2" />
+  </joint>
+  <link
+    name="gripper_link11">
+    <inertial>
+      <origin
+        xyz="-0.0110043692378349 0.00972866237979003 -3.15436854414486E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0450681926243327" />
+      <inertia
+        ixx="1.99225999101227E-07"
+        ixy="9.189631443366E-08"
+        ixz="1.32669175648538E-13"
+        iyy="5.14550853833888E-07"
+        iyz="-4.49972931710022E-14"
+        izz="5.32027763416069E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link11.obj" />
+      </geometry>
+      <material
+        name="lambert2SG">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link11.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_gripper11"
+    type="fixed">
+    <origin
+      xyz="0.041998 -0.00037577 0"
+      rpy="0 0 2.8658" />
+    <parent
+      link="gripper_link10" />
+    <child
+      link="gripper_link11" />
+    <!-- <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-10"
+      upper="10"
+      effort="20"
+      velocity="0.2" /> -->
+  </joint>
+  <link
+    name="gripper_link20">
+    <inertial>
+      <origin
+        xyz="0.0160458916846533 0.00170815882510347 -1.61815005839117E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.024857419325728" />
+      <inertia
+        ixx="1.11873212817726E-07"
+        ixy="6.5445041140093E-19"
+        ixz="1.13838047913434E-18"
+        iyy="6.84359115875493E-07"
+        iyz="-3.98790262211301E-19"
+        izz="5.8907299494856E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link20.obj" />
+      </geometry>
+      <material
+        name="lambert2SG">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link20.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_gripper20"
+    type="prismatic">
+    <origin
+      xyz="0.033 0.00036 0.18664"
+      rpy="1.5708 -1.304 0" />
+    <parent
+      link="gripper_link" />
+    <child
+      link="gripper_link20" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-10"
+      upper="10"
+      effort="20"
+      velocity="0.2" />
+  </joint>
+  <link
+    name="gripper_link21">
+    <inertial>
+      <origin
+        xyz="-0.0117059608928904 -0.0140030860218414 3.11077152925776E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0450681912675432" />
+      <inertia
+        ixx="2.02615006762524E-07"
+        ixy="-9.74786442765277E-08"
+        ixz="-1.30502494006714E-13"
+        iyy="5.11161832405036E-07"
+        iyz="-4.71432886532517E-14"
+        izz="5.32027750665231E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link21.obj" />
+      </geometry>
+      <material
+        name="lambert2SG">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../all/gripper_link21.obj" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_gripper21"
+    type="fixed">
+    <origin
+      xyz="0.041998 -0.00037577 0"
+      rpy="0 0 -2.8837" />
+    <parent
+      link="gripper_link20" />
+    <child
+      link="gripper_link21" />
+    <!-- <axis
+      xyz="0 0 1" /> -->
+    <!-- <limit
+      lower="-10"
+      upper="10"
+      effort="20"
+      velocity="0.2" /> -->
+    <!-- <mimic
+      joint="joint_gripper10"
+      multiplier="1"
+      offset="0" /> -->
+  </joint>
+  <link
+    name="custom_end_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1E-15" />
+      <inertia
+        ixx="1E-11"
+        ixy="1E-15"
+        ixz="1E-15"
+        iyy="1E-11"
+        iyz="1E-15"
+        izz="1E-11" />
+    </inertial>
+  </link>
+  <joint
+    name="joint_custom_end"
+    type="fixed">
+    <origin
+      xyz="0 0 0.255"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="gripper_link" />
+    <child
+      link="custom_end_link" />
+  </joint>
+</robot>

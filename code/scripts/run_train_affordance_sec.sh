@@ -1,0 +1,30 @@
+python train/train_affordance.py \
+    --exp_suffix 17 \
+    --category_types part  \
+    --cat2freq '600,600,600,600,600,600,600,600,600,600'  \
+    --model_version model_aff_sec \
+    --actor_version model_actor_sec  \
+    --actor_path  ../logs/actor/exp-model_actor_sec-part-15  \
+    --actor_eval_epoch 70 \
+    --critic_version model_critic_sec   \
+    --critic_path  ../logs/critic/exp-model_critic_sec-part-15 \
+    --critic_eval_epoch 14 \
+    --offline_data_dir ../../PreAfford_24_1_28_final/data/4scene_all \
+    --offline_data_dir2 ../data/TableEdge_train_sec_4scene_all_7 \
+    --offline_data_dir3 ../data/TableEdge_train_sec_4scene_all_6 \
+    --val_data_dir ../../PreAfford_24_1_28_final/data/4scene_all_val \
+    --train_buffer_max_num 15000  \
+    --val_buffer_max_num 1000  \
+    --feat_dim 160   \
+    --batch_size 60  \
+    --lr 0.0015      \
+    --lr_decay_every 1000 \
+    --z_dim 32      \
+    --rv_cnt 20 \
+    --topk 20  \
+    --succ_proportion 0.4 \
+    --fail_proportion 0.8 \
+    --coordinate_system cambase \
+    --device cuda:0 \
+    --use_boxed_pc 
+

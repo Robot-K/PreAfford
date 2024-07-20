@@ -1,0 +1,20 @@
+xvfb-run -a python data_collection/collect_data_main_sec.py \
+    --category Switch,Laptop,Cap,Phone \
+    --scene table,groove,slope,wall \
+    --out_dir ../data/TableEdge_train_sec_4scene_all_7 \
+    --mode train \
+    --target_part_state closed \
+    --start_dist 0.34 \
+    --maneuver_dist 0.39 \
+    --displacement 0.450 \
+    --density 5 \
+    --move_steps 2000 \
+    --maneuver_steps 1000 \
+    --wait_steps 1000 \
+    --num_processes 120 \
+    --start_epoch 0 \
+    --save_interval 50 \
+    --single_trail 10000 \
+    --total_trail 60000 \
+    --con_ratio 0.5 \
+    --no_gui \
