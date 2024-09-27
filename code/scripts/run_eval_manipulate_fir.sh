@@ -1,0 +1,15 @@
+xvfb-run -a python eval/eval_manipulate_scene_main_fir.py \
+    --categories Switch,Laptop,Scissors,Cap,Phone,Box,Display,Eyeglasses,Faucet,KitchenPot,Pliers,Basket,Bowl,Remote,Keyboard2  \
+    --scene multiple \
+    --out_folder ../data/eval_multiple_all_nocon \
+    --out_folder_final ../data/eval_multiple_all_pushed \
+    --start_dist 0.3 \
+    --maneuver_dist 0.33 \
+    --density 5 \
+    --move_steps 3500   \
+    --wait_steps 2000   \
+    --num_processes 120 \
+    --density 5.0\
+    --multiple_check \
+    --initialize_dict \
+    --device cuda:0

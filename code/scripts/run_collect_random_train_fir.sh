@@ -1,0 +1,20 @@
+xvfb-run -a python data_collection/collect_data_main_fir.py \
+    --category Laptop,Scissors,Cap,Phone,Keyboard2,Bucket,Eyeglasses,KitchenPot,Basket,Bowl,Switch,Window,Tablet,Pliers,Display,Faucet,Kettle,Remote \
+    --scene table,groove,slope,wall,multiple \
+    --out_dir ../data/PreGrasp_figures \
+    --mode all \
+    --target_part_state closed \
+    --start_dist 0.3 \
+    --maneuver_dist 0.33 \
+    --density 5 \
+    --move_steps 3000 \
+    --maneuver_steps 500 \
+    --wait_steps 1000 \
+    --num_processes 120 \
+    --start_epoch 1000 \
+    --given_direction_ratio 1.0 \
+    --save_interval 12 \
+    --single_trail 10000 \
+    --total_trail 600000 \
+    --initialize_dict \
+    --no_gui \

@@ -1,0 +1,38 @@
+xvfb-run -a python eval/eval_generate_scene_main_sec.py \
+    --categories Bucket,Eyeglasses,KitchenPot,Basket,Bowl  \
+    --scene multiple \
+    --use_4th_feature \
+    --aff1_version model_aff_sec   \
+    --aff1_path  ../logs/affordance/exp-model_aff_sec-None-part-2   \
+    --aff1_eval_epoch 86 \
+    --actor1_version model_actor_sec   \
+    --actor1_path  ../logs/actor/exp-model_actor_sec-pushing-part-2  \
+    --actor1_eval_epoch 100 \
+    --critic1_version model_critic_sec   \
+    --critic1_path  ../logs/critic/exp-model_critic_sec-part-6 \
+    --critic1_eval_epoch 50 \
+    --out_folder ../data/multiple_frontview \
+    --target_part_state closed  \
+    --start_dist 0.35 \
+    --maneuver_dist 0.45 \
+    --displacement 0.450 \
+    --density 5 \
+    --move_steps 2400   \
+    --wait_steps 1200   \
+    --num_processes 50 \
+    --z_dim 32  \
+    --num_ctpt1 10       \
+    --rv1 100            \
+    --num_pair1 2   \
+    --aff_topk 0.002   \
+    --critic_topk1 0.005 \
+    --device cuda:0 \
+    --thin_ratio 1.0 \
+    --con_ratio 0. \
+    --mode train \
+    --single_trial 10000 \
+    --total_trial 60000 \
+    --start_epoch 100 \
+    --save_interval 5 \
+    --initialize_dict \
+    --multiple_check \
